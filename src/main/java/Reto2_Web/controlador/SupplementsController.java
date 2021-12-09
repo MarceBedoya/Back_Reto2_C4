@@ -37,9 +37,9 @@ public class SupplementsController {
         return accessoryService.getAll();
     }
     
-    @GetMapping("/{reference}")
-    public Optional<Supplements> getClothe(@PathVariable("reference") String reference) {
-        return accessoryService.getClothe(reference);
+    @GetMapping("/{id}")
+    public Optional<Supplements> getClothe(@PathVariable("id") String id) {
+        return accessoryService.getClothe(id);
     }
 
     @PostMapping("/new")
@@ -54,10 +54,10 @@ public class SupplementsController {
         return accessoryService.update(gadget);
     }
 
-    @DeleteMapping("/{reference}")
+    @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public boolean delete(@PathVariable("reference") String reference) {
-        return accessoryService.delete(reference);
+    public boolean delete(@PathVariable("id") String id) {
+        return accessoryService.delete(id);
     } 
     
 }
