@@ -24,12 +24,12 @@ public class SupplementsService {
         return clotheRepository.getAll();
     }
 
-   public Optional<Supplements> getClothe(String reference) {
-        return clotheRepository.getClothe(reference);
+   public Optional<Supplements> getClothe(String id) {
+        return clotheRepository.getClothe(id);
     }
 
     public Supplements create(Supplements accesory) {
-        if (accesory.getReference() == null) {
+        if (accesory.getId() == null) {
             return accesory;
         } else {
             return clotheRepository.create(accesory);
@@ -38,8 +38,8 @@ public class SupplementsService {
 
     public Supplements update(Supplements accesory) {
 
-        if (accesory.getReference() != null) {
-            Optional<Supplements> accesoryDb = clotheRepository.getClothe(accesory.getReference());
+        if (accesory.getId() != null) {
+            Optional<Supplements> accesoryDb = clotheRepository.getClothe(accesory.getId());
             if (!accesoryDb.isEmpty()) {
                 
                 if (accesory.getBrand()!= null) {
@@ -73,8 +73,8 @@ public class SupplementsService {
         }
     }
 
-    public boolean delete(String reference) {
-        Boolean aBoolean = getClothe(reference).map(accesory -> {
+    public boolean delete(String id) {
+        Boolean aBoolean = getClothe(id).map(accesory -> {
             clotheRepository.delete(accesory);
             return true;
         }).orElse(false);

@@ -14,19 +14,19 @@ import org.springframework.data.mongodb.core.mapping.Document;
  *
  * @author USUARIO
  */
-@Document(collection = "supplements")
+@Document(collection = "cleaningprod")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 public class Supplements {
     @Id
-    private String reference;
+    private String id;
     private String brand;
     private String category;
-    private String objetivo;
+    private String presentation;
     private String description;
-    private boolean availability = true;
     private double price;
+    private boolean availability = true;
     private int quantity;
     private String photography;
 }
