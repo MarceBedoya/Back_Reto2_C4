@@ -12,6 +12,6 @@ import org.springframework.data.mongodb.repository.MongoRepository;
  *
  * @author USUARIO
  */
-public interface InterfaceSupplements extends MongoRepository<Supplements, String> {
+public interface InterfaceSupplements extends MongoRepository<Supplements, Integer> {
     
 }

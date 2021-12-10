@@ -38,7 +38,7 @@ public class SupplementsController {
     }
     
     @GetMapping("/{id}")
-    public Optional<Supplements> getClothe(@PathVariable("id") String id) {
+    public Optional<Supplements> getClothe(@PathVariable("id") int id) {
         return accessoryService.getClothe(id);
     }
 
@@ -56,7 +56,7 @@ public class SupplementsController {
 
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public boolean delete(@PathVariable("id") String id) {
+    public boolean delete(@PathVariable("id") int id) {
         return accessoryService.delete(id);
     } 
     

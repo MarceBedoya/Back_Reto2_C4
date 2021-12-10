@@ -24,7 +24,7 @@ public class SupplementsService {
         return clotheRepository.getAll();
     }
 
-   public Optional<Supplements> getClothe(String id) {
+   public Optional<Supplements> getClothe(int id) {
         return clotheRepository.getClothe(id);
     }
 
@@ -53,6 +53,9 @@ public class SupplementsService {
                 if (accesory.getDescription() != null) {
                     accesoryDb.get().setDescription(accesory.getDescription());
                 }
+                if (accesory.getPresentation()!= null) {
+                    accesoryDb.get().setPresentation(accesory.getPresentation());
+                }
                 if (accesory.getPrice() != 0.0) {
                     accesoryDb.get().setPrice(accesory.getPrice());
                 }
@@ -73,7 +76,7 @@ public class SupplementsService {
         }
     }
 
-    public boolean delete(String id) {
+    public boolean delete(int id) {
         Boolean aBoolean = getClothe(id).map(accesory -> {
             clotheRepository.delete(accesory);
             return true;

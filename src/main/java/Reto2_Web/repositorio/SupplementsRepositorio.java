@@ -24,8 +24,8 @@ public class SupplementsRepositorio {
         return repository.findAll();
     }
 
-    public Optional<Supplements> getClothe(String reference) {
-        return repository.findById(reference);
+    public Optional<Supplements> getClothe(int id) {
+        return repository.findById(id);
     }
     public Supplements create(Supplements clothe) {
         return repository.save(clothe);
@@ -38,4 +38,6 @@ public class SupplementsRepositorio {
     public void delete(Supplements clothe) {
         repository.delete(clothe);
     }
+
+    
 }
